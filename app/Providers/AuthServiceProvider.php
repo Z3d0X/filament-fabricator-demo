@@ -2,20 +2,14 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
-
+use App\Policies\PagePolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Z3d0X\FilamentFabricator\Models\Page;
 
 class AuthServiceProvider extends ServiceProvider
 {
-    /**
-     * The model to policy mappings for the application.
-     *
-     * @var array<class-string, class-string>
-     */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-        \Z3d0X\FilamentFabricator\Models\Page::class => \App\Policies\PagePolicy::class,
+        Page::class => PagePolicy::class,
     ];
 
     /**
